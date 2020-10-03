@@ -8,12 +8,12 @@ namespace Rugby_Scores
     {
         private int conversionCount;
         private int tryCount;
-        private int pointsModern;
-        private int pointsOld;
+        private int PointsModern { get; set; }
+        private int PointsOld { get; set; }
         public Team()
         {
-            pointsOld = 0;
-            pointsModern = 0;
+            PointsOld = 0;
+            PointsModern = 0;
             tryCount = 0;
            conversionCount = 0;
         }
@@ -21,20 +21,29 @@ namespace Rugby_Scores
         public void AddTry()
         {
             tryCount++;
-            pointsModern += 5;           
+            PointsModern += 5;           
         }
 
         public void AddPenDrop()
         {
-            pointsOld += 1;
-            pointsModern += 3;                
+            PointsOld += 1;
+            PointsModern += 3;                
         }
 
         public void AddConversion()
         {
-            pointsOld += 1;
-            pointsModern += 2;
+            PointsOld += 1;
+            PointsModern += 2;
             conversionCount++;
+        }
+
+        public int[] points()
+        {
+            var point = new int[]
+            {
+                PointsModern, PointsOld
+            };
+            return point;
         }
 
         public int Unconverted()
