@@ -113,7 +113,7 @@ namespace Rugby_Scores
 
             void ProcessA(string temp)
             {
-                temp.Replace("A", "");//removes the team identifier so only the event is left.
+                temp = temp.Replace("A", "");//removes the team identifier so only the event is left.
                 switch (temp)//checks what event is being called, and calls correct event. 
                 {
                     case "T":
@@ -135,7 +135,7 @@ namespace Rugby_Scores
 
             void ProcessB(string temp)
             {
-                temp.Replace("B", "");
+                temp = temp.Replace("B", "");
 
                 switch (temp)//checks what event is being called, and calls correct event. 
                 {
